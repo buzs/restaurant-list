@@ -1,16 +1,16 @@
 import React from "react";
-import { IngredientsListContext } from "./App";
+import { IngredientsListContext } from "../../App";
 
-const IngredientList = (props) => {
+const IngredientList: React.FC = () => {
   const context = React.useContext(IngredientsListContext);
 
   return (
     <table>
       <thead>
         <tr>
-          <th>Ingrediente</th>
+          <th>Ingredientes</th>
           <th>
-            Peso <small>(kg|ml)</small>
+            Metricas
           </th>
         </tr>
       </thead>
@@ -18,7 +18,7 @@ const IngredientList = (props) => {
         {context.ingredients.map((ingredient, index) => (
           <tr key={ingredient.name}>
             <td>{ingredient.name}</td>
-            <td>{ingredient.weight}</td>
+            <td>{ingredient.metric}</td>
           </tr>
         ))}
       </tbody>
