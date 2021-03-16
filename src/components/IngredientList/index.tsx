@@ -1,11 +1,14 @@
 import React from "react";
+
+import * as S from "./styles"
 import { IngredientsListContext } from "../../App";
 
 const IngredientList: React.FC = () => {
   const context = React.useContext(IngredientsListContext);
 
   return (
-    <table>
+    <S.Wrapper>
+      <S.Table>
       <thead>
         <tr>
           <th>Ingredientes</th>
@@ -22,7 +25,8 @@ const IngredientList: React.FC = () => {
           </tr>
         ))}
       </tbody>
-    </table>
+    </S.Table>
+    </S.Wrapper>
   );
 };
 
