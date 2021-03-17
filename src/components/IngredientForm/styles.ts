@@ -5,6 +5,9 @@ export const Wrapper = styled.div`
     padding: 2rem;
     background: #96ACB7;
     border-radius: 1rem;
+    display: flex;
+    align-content: center;
+    justify-content: center;
 `;
 
 export const InputText = styled.input`
@@ -20,9 +23,9 @@ export const InputSelect = styled.select`
 
 export const Button = styled.button`
     margin-left: 1rem;
-    font-size: 1.8rem;
-    padding: 0.6rem;
-    background: #006C67;
+    font-size: 1.6rem;
+    padding: 0.8rem 1rem;
+    background: rgb(100, 255, 218);
     border: 0;
     border-radius: 0.6rem;
 `

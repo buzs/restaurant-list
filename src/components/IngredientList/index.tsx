@@ -1,33 +1,44 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { deleteIngredient } from "../../actions/IngredientsActions";
+import { IngredientsContext } from "../../contexts/IngredientListContext";
 
 import * as S from "./styles"
-import { IngredientsListContext } from "../../App";
+
 
 const IngredientList: React.FC = () => {
-  const context = React.useContext(IngredientsListContext);
+  const { state: { ingredients }, dispatch } = React.useContext(IngredientsContext);
+
+  const deleteHandler = (id: string) => dispatch(deleteIngredient(id));
 
   return (
     <S.Wrapper>
       <S.Table>
-      <thead>
-        <tr>
-          <th>Ingredientes</th>
-          <th>
-            Metricas
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        {context.ingredients.map((ingredient, index) => (
-          <tr key={ingredient.name}>
-            <td>{ingredient.name}</td>
-            <td>{ingredient.metric}</td>
+        <thead>
+          <tr>
+            <th>Remover</th>
+            <th>Ingredientes</th>
+            <th>
+              Metricas
+            </th>
           </tr>
-        ))}
-      </tbody>
-    </S.Table>
+        </thead>
+        <tbody>
+          <Fragment>
+            {ingredients.length > 0 ? <Fragment>
+              {ingredients.map(({id, name, metric}) => (
+                <tr key={name}>
+                  <td><button onClick={() => deleteHandler(id)}>Delete</button></td>
+                  <td>{name}</td>
+                  <td>{metric}</td>
+                </tr>
+                ))}
+            </Fragment> : <h3>No data</h3>}
+          </Fragment>
+        </tbody>
+      </S.Table>
     </S.Wrapper>
   );
 };
 
 export default IngredientList;
+

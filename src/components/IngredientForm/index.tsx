@@ -1,19 +1,24 @@
-import React from "react";
+import React, { FormEvent } from "react";
 
 import * as S from "./styles"
-import { IngredientsListContext } from "../../App";
+import { IngredientsContext } from "../../contexts/IngredientListContext";
+import { addIngredient } from "../../actions/IngredientsActions";
 
 const AddIngredientForm: React.FC = () => {
-  const context = React.useContext(IngredientsListContext);
+  const { dispatch } = React.useContext(IngredientsContext);
 
   const [name, setName] = React.useState("");
   const [metric, setMetric] = React.useState("ml");
 
-  const submit = () => {
-    if (name === "" || metric === "") {
-      return;
-    }
-    context.addIngredient(name, metric);
+  const submit = (e: FormEvent) => {
+    e.preventDefault();
+
+    dispatch(addIngredient({
+      id: new Date().getTime().toString(),
+      name,
+      metric
+    }))
+
     setName("");
   };
 
@@ -21,7 +26,7 @@ const AddIngredientForm: React.FC = () => {
     <S.Wrapper>
       <S.InputText
         type="text"
-        name={name}
+        value={name}
         placeholder="Ingrediente"
         onChange={(e) => setName(e.target.value)}
       />

@@ -7,9 +7,27 @@ export const Wrapper = styled.div`
 `
 
 export const Table = styled.table`
+    width: 100%;
+    margin-top: 1rem;
     font-size: 2rem;
-    td {
-        padding-left: 1rem;
-        text-align: end;
+    background-color: rgba(10, 25, 47, .4);
+    border-radius: .5rem;
+
+    thead {
+        color: #E2E8F0;
+    }
+
+    tbody {
+        color: #EDF2F7;
+    }
+
+    td, th {
+        padding: .75rem;
+        vertical-align: top;
+        text-align: start;
+    }
+
+    tbody tr:nth-of-type(odd) {
+        background-color: rgba(0,0,0,.05)
     }
 `
