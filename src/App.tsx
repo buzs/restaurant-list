@@ -1,40 +1,22 @@
 import React from "react";
-import "./styles.css";
+import { Route, Switch } from "react-router-dom";
 
-import GlobalStyle from "./styles/global"
+import GlobalStyle from "./styles/global";
+
+import IngredientsContextProvider from "./contexts/IngredientListContext";
 
 import Home from "./pages/Home";
-
-export const IngredientsListContext = React.createContext<
-  IngredientsListContextType
->({
-  ingredients: [],
-  addIngredient: (name: string, metric: string) => {}
-});
-
-type IngredientsListContextType = {
-  ingredients: ingredientType[];
-  addIngredient: (name: string, metric: string) => void;
-};
-
-type ingredientType = {
-  name: string;
-  metric: string;
-};
+import ShopList from "./pages/ShopList";
 
 const App: React.FC = () => {
-  const [ingredients, setIngredients] = React.useState<ingredientType[]>([]);
-
-  const addIngredient = (name: string, metric: string) => {
-    const newIngredient = { name, metric };
-    setIngredients((prevIngredients) => [...prevIngredients, { name, metric }]);
-  };
-
   return (
-    <IngredientsListContext.Provider value={{ ingredients, addIngredient }}>
+    <IngredientsContextProvider>
       <GlobalStyle />
-      <Home />
-    </IngredientsListContext.Provider>
+      <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/shoplist" component={ShopList} />
+      </Switch>
+    </IngredientsContextProvider>
   );
 }
 
