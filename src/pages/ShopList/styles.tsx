@@ -1,9 +1,19 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
-    margin: 0 auto;
-    max-width: 70rem;
-    background: rgba(255, 255, 255, 0.32);
-    padding: 3rem;
-    border-radius: 1rem;
+import { Link as HomeLink, Wrapper as HomeWrapper } from "../Home/styles"
+
+export const Wrapper = HomeWrapper
+
+export const Link = HomeLink
+
+export const Title = styled.h2`
+    color: #354231;
+`
+
+export const Header = styled.div`
+    display: flex;
+`
+
+export const Button = styled.button`
+    margin-left: 3rem;
 `
