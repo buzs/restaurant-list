@@ -18,12 +18,12 @@ export default createGlobalStyle`
 
     html, body, #root {
         height: 100%;
-        background: rgb(10, 25, 47);
     }
 
     #root {
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
     }
 `
