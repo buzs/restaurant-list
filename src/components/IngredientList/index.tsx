@@ -34,7 +34,7 @@ const IngredientList: React.FC = () => {
                   <td>{metric}</td>
                 </tr>
                 ))}
-            </Fragment> : <h3>No data</h3>}
+            </Fragment> : <h3>Nenhum ingrediente encontrado</h3>}
           </Fragment>
         </tbody>
       </S.Table>

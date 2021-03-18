@@ -26,7 +26,7 @@ const IngredientListToPrint: React.FC = () => {
                 {ingredients.map((ingredient) => (<IngredientItem key={ingredient.id} ingredient={ingredient} />))}
               </Fragment> 
             : 
-              <h3>No data</h3>}
+              <h3>Nenhum ingrediente encontrado</h3>}
           </Fragment>
         </tbody>
       </S.Table>

@@ -33,6 +33,12 @@ export const Table = styled.table`
 
     tbody {
         color: #EDF2F7;
+        
+        h3 {
+            font-size: 2rem;
+            font-weight: 500;
+            text-align: center;
+        }
     }
 
     td, th {
