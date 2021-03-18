@@ -1,5 +1,7 @@
 import React, { FormEvent } from "react";
 
+import { AddCircle } from "@styled-icons/ionicons-outline/AddCircle";
+
 import * as S from "./styles"
 import { IngredientsContext } from "../../contexts/IngredientListContext";
 import { addIngredient } from "../../actions/IngredientsActions";
@@ -12,6 +14,10 @@ const AddIngredientForm: React.FC = () => {
 
   const submit = (e: FormEvent) => {
     e.preventDefault();
+
+    if (name === "") {
+      return;
+    }
 
     dispatch(addIngredient({
       id: new Date().getTime().toString(),
@@ -37,7 +43,7 @@ const AddIngredientForm: React.FC = () => {
         <option value="l">litro</option>
       </S.InputSelect>
 
-      <S.Button onClick={submit}>Adicionar produto</S.Button>
+      <S.Button onClick={submit}>Adicionar produto <AddCircle /></S.Button>
     </S.Wrapper>
   );
 };

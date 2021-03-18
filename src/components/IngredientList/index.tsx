@@ -2,6 +2,8 @@ import React, { Fragment } from "react";
 import { deleteIngredient } from "../../actions/IngredientsActions";
 import { IngredientsContext } from "../../contexts/IngredientListContext";
 
+import { Trash } from "@styled-icons/ionicons-outline/Trash";
+
 import * as S from "./styles"
 
 
@@ -15,7 +17,7 @@ const IngredientList: React.FC = () => {
       <S.Table>
         <thead>
           <tr>
-            <th>Remover</th>
+            <th></th>
             <th>Ingredientes</th>
             <th>
               Metricas
@@ -27,7 +29,7 @@ const IngredientList: React.FC = () => {
             {ingredients.length > 0 ? <Fragment>
               {ingredients.map(({id, name, metric}) => (
                 <tr key={name}>
-                  <td><button onClick={() => deleteHandler(id)}>Delete</button></td>
+                  <td><S.Button onClick={() => deleteHandler(id)}> <Trash />Remover</S.Button></td>
                   <td>{name}</td>
                   <td>{metric}</td>
                 </tr>

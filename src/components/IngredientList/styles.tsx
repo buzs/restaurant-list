@@ -6,6 +6,20 @@ export const Wrapper = styled.div`
     justify-content: center;
 `
 
+export const Button = styled.button`
+    font-size: 1.6rem;
+    padding: 0.28rem 0.8rem;
+    border: none;
+    background-color: #9E2A24;
+    color: #E2E8F0;
+    border-radius: 0.4rem;
+
+    svg {
+        padding-right: 0.5rem;
+        height: 2.2rem;
+    }
+`
+
 export const Table = styled.table`
     width: 100%;
     margin-top: 1rem;

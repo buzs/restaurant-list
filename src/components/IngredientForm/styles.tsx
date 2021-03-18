@@ -25,7 +25,14 @@ export const Button = styled.button`
     margin-left: 1rem;
     font-size: 1.6rem;
     padding: 0.8rem 1rem;
-    background: rgb(100, 255, 218);
+    background: #E67139;
+    color: #E2E8F0;
+    font-weight: 600;
     border: 0;
     border-radius: 0.6rem;
+    align-items: center;
+
+    svg {
+        height: 2.5rem;
+    }
 `

@@ -1,19 +1,19 @@
 import styled from "styled-components";
 
-import { Link as HomeLink, Wrapper as HomeWrapper } from "../Home/styles"
+import { Link as HomeLink, Wrapper as HomeWrapper } from "../Home/styles";
+import { Button as FormButton } from "../../components/IngredientForm/styles";
 
 export const Wrapper = HomeWrapper
 
 export const Link = HomeLink
 
 export const Title = styled.h2`
-    color: #354231;
+    color: #8cbdd1;
 `
 
 export const Header = styled.div`
     display: flex;
+    justify-content: space-between;
 `
 
-export const Button = styled.button`
-    margin-left: 3rem;
-`
+export const Button = FormButton;
